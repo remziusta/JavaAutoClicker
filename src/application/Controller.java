@@ -78,15 +78,15 @@ public class Controller implements Initializable{
 		LocalDate dates = LocalDate.now();
 		
 		
-		//Sistem Tarihini Milisecond Olarak Tutan Değişken
+		//Sistem Tarihini Milisecond Olarak Tutan DeÄŸiÅŸken
 		
 		long localtimes = System.currentTimeMillis();
-		//Kullanıcının İstediği Tarihi Milisecond Olarak Tutan Değişken
+		//KullanÃ½cÃ½nÃ½n ÃstediÃ°i Tarihi Milisecond Olarak Tutan DeÄŸiÅŸken
 		long comeTime = ConverToMiliSecond(dates.getYear(),dates.getMonthValue(),dates.getDayOfMonth(),time.getHour(), minute.getValue(), second.getValue(), milisecond.getValue());
 		//System.out.println("Local Time : " + localtimes);
-		System.out.println("Başlansgıç zamanı: " + (time));
+		System.out.println("BaÅŸlangÄ±Ã§ zamanÄ±: " + (time));
 		if(localtimes < comeTime) {
-			info_label.setText("Başladı");
+			info_label.setText("BaÅŸladÄ±");
 			robot.mouseMove(MouseCoordinate.coordinate[0].getX(), MouseCoordinate.coordinate[0].getY());
 			robot.mousePress(MouseEvent.BUTTON1_MASK);
 			
@@ -114,7 +114,7 @@ public class Controller implements Initializable{
 			timer.schedule(task, 0,1);
 			
 		}else if(localtimes > comeTime) {
-			info_label.setText("Yerel zamandan ileri zaman seçiniz...");
+			info_label.setText("Yerel zamandan ileri zaman seÃ§iniz...");
 		}
 		
 	}
